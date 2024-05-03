@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). This project will also require an environment variable to the api of your backend. REACT_APP_BASE_URL="http://localhost:5001/" if you are running the backend locally.
 
 ## Available Scripts
 
