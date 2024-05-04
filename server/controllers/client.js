@@ -22,7 +22,7 @@ export const getProducts = async (req, res) => {
 
     res.status(200).json(productsWithStats);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting products:\n ${error.message}` });
   }
 };
 
@@ -31,7 +31,7 @@ export const getCustomers = async (req, res) => {
     const customers = await User.find({ role: "user" }).select("-password");
     res.status(200).json(customers);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting customers:\n ${error.message}` });
   }
 };
 
@@ -70,7 +70,7 @@ export const getTransactions = async (req, res) => {
       total,
     });
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting transactions:\n ${error.message}` });
   }
 };
 
@@ -95,6 +95,6 @@ export const getGeography = async (req, res) => {
 
     res.status(200).json(formattedLocations);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting geography:\n ${error.message}` });
   }
 };
