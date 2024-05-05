@@ -190,7 +190,12 @@ const Dashboard = () => {
           <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
             Sales By Category
           </Typography>
-          <BreakdownChart isDashboard={true} />
+          <Box sx={{
+            overflowX: "auto",
+            overflowY: "hidden",
+          }} >
+            <BreakdownChart isDashboard={true}/>
+          </Box>
           <Typography
             p="0 0.6rem"
             fontSize="0.8rem"
