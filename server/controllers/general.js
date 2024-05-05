@@ -8,7 +8,7 @@ export const getUser = async (req, res) => {
     const user = await User.findById(id);
     res.status(200).json(user);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting user:\n ${error.message}` });
   }
 };
 
@@ -54,6 +54,6 @@ export const getDashboardStats = async (req, res) => {
       transactions,
     });
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting stats for dashboard:\n ${error.message}` });
   }
 };

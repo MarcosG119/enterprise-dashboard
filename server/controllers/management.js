@@ -7,7 +7,7 @@ export const getAdmins = async (req, res) => {
     const admins = await User.find({ role: "admin" }).select("-password");
     res.status(200).json(admins);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting admins:\n ${error.message}` });
   }
 };
 
@@ -41,6 +41,6 @@ export const getUserPerformance = async (req, res) => {
       .status(200)
       .json({ user: userWithStats[0], sales: filteredSaleTransactions });
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(404).json({ message: `Server error getting user performance:\n ${error.message}` });
   }
 };
